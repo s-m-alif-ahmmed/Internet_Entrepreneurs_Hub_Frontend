@@ -119,10 +119,10 @@ function ConsultationFormContent() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4">
             <Link
-              href="/client/consultations"
+              href="/student/dashboard"
               className="px-6 py-3 rounded-xl bg-[#2457D6] text-white text-xs font-bold hover:bg-[#193F9B] transition-colors"
             >
-              View in Client Portal
+              Go to My Dashboard
             </Link>
             <button
               onClick={() => {

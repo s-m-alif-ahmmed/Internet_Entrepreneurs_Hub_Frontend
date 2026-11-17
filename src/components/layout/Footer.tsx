@@ -65,8 +65,18 @@ export function Footer() {
                               </Link>
                             </li>
                             <li>
+                              <Link href="/membership" className="hover:text-white transition-colors">
+                                Membership Plans
+                              </Link>
+                            </li>
+                            <li>
                               <Link href="/courses" className="hover:text-white transition-colors">
                                 Courses
+                              </Link>
+                            </li>
+                            <li>
+                              <Link href="/blogs" className="hover:text-white transition-colors">
+                                Blogs
                               </Link>
                             </li>
                             <li>

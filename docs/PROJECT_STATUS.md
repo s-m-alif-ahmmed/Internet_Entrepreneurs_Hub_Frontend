@@ -33,6 +33,9 @@ The Internet Entrepreneurs Hub (IEH) business consultancy and online learning pl
 - [x] **Route 14 (`/privacy-policy`):** GDPR and data protection policy detailing data collection, processing, and cookie compliance.
 - [x] **Route 15 (`/refund-policy`):** Explicit 7-day course refund policy and bespoke consultancy cancellation criteria.
 - [x] **Route 16 (`/cookie-policy`):** Granular cookie disclosure and consent management guide.
+- [x] **Blog Listing (`/blogs`):** Editorial blog directory with featured article spotlight, live search, category filters, sorting, and newsletter signup.
+- [x] **Blog Details (`/blogs/[slug]`):** Dynamic article reader with breadcrumbs, key takeaways, sticky Table of Contents, bookmark/share controls, author bio, interactive comments, and related articles.
+- [x] **Membership Packages (`/membership`):** 4 tiered membership plans (`Starter`, `Growth`, `Pro Business`, `Executive All-Access`) with comparison matrix, promo-enabled checkout, and automatic course unlocking inside the Student Dashboard (`/student/dashboard`, `/student/my-courses`, `/student/course/[id]`).
 
 
 ### Authentication & Account Access (Routes 17–21) — 100% Complete
@@ -56,24 +59,8 @@ The Internet Entrepreneurs Hub (IEH) business consultancy and online learning pl
 - [x] **Route 29 (`/student/profile`):** Account settings, full name, phone number, and avatar updater backed by persistent localStorage.
 - [x] **Route 30 (`/student/support`):** Student-facing ticket desk with real-time response messaging and status updates.
 
-### Client Workspace (Routes 31–36) — 100% Complete
-
-- [x] **Route 31 (`/client/dashboard`):** Corporate overview, active strategic engagements, assigned consultants, and booked consultations.
-- [x] **Route 32 (`/client/consultations`):** Complete list of consultation requests with statuses (`pending`, `under_review`, `confirmed`, `completed`).
-- [x] **Route 33 (`/client/consultations/[id]`):** Strategic engagement detail view with milestone steps, deliverables tracker, meeting link, and notes.
-- [x] **Route 34 (`/client/orders`):** Corporate invoices and retainer billing records.
-- [x] **Route 35 (`/client/support`):** Priority executive support desk with direct ticket reply capabilities.
-- [x] **Route 36 (`/client/profile`):** Corporate account profile with company name, industry, and contact info.
-
-
-### Instructor Workspace (Routes 37–42) — 100% Complete
-
-- [x] **Route 37 (`/instructor/dashboard`):** Faculty metrics, total students taught, courses under management, and upcoming sessions.
-- [x] **Route 38 (`/instructor/courses`):** Faculty course portfolio with quick status toggles and direct curriculum links.
-- [x] **Route 39 (`/instructor/students`):** Enrolled students roster with course completion percentages and contact details.
-- [x] **Route 40 (`/instructor/live-classes`):** Broadcast management dashboard to schedule live classes and launch streams.
-- [x] **Route 41 (`/instructor/announcements`):** Broadcast management for course-wide updates and student notices.
-- [x] **Route 42 (`/instructor/profile`):** Instructor bio, areas of expertise, and credentials editor.
+### Removed Workspaces
+- Client Dashboard (`/client/*`) and Instructor Dashboard (`/instructor/*`) removed; only **Student** (`/student/*`) and **Admin** (`/admin/*`) dashboards and demo logins remain active.
 
 ### Admin Workspace (Routes 43–61) — 100% Complete
 

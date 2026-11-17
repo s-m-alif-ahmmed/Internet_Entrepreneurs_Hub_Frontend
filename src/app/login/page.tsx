@@ -29,10 +29,6 @@ export default function LoginPage() {
     switch (role) {
       case "admin":
         return "/admin/dashboard";
-      case "instructor":
-        return "/instructor/dashboard";
-      case "client":
-        return "/client/dashboard";
       case "student":
       default:
         return "/student/dashboard";
@@ -45,7 +41,11 @@ export default function LoginPage() {
     setError("");
 
     setTimeout(() => {
-      const foundUser = users.find((u) => u.email.toLowerCase() === email.toLowerCase());
+      const foundUser = users.find(
+        (u) =>
+          u.email.toLowerCase() === email.toLowerCase() &&
+          (u.role === "student" || u.role === "admin")
+      );
       if (foundUser) {
         loginAs(foundUser.role);
         setIsLoading(false);
@@ -81,7 +81,7 @@ export default function LoginPage() {
             Welcome Back
           </h2>
           <p className="text-xs sm:text-sm text-[#64748B]">
-            Sign in to access your course materials or client portal.
+            Sign in to access your Student or Admin dashboard.
           </p>
         </div>
 
@@ -168,8 +168,6 @@ export default function LoginPage() {
             <div className="grid grid-cols-2 gap-1.5 pt-1">
               {[
                 { role: "student", label: "Student Demo" },
-                { role: "client", label: "Client Demo" },
-                { role: "instructor", label: "Instructor Demo" },
                 { role: "admin", label: "Admin Demo" },
               ].map((item) => (
                 <button

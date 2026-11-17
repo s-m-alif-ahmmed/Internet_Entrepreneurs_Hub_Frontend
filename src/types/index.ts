@@ -175,7 +175,7 @@ export interface Order {
   referenceNumber: string;
   customerName: string;
   customerEmail: string;
-  itemType: "course" | "service";
+  itemType: "course" | "service" | "membership";
   itemId: string;
   itemTitle: string;
   amount: number;
@@ -240,4 +240,57 @@ export interface Certificate {
   issueDate: string;
   instructorName: string;
   verificationUrl: string;
+}
+
+export type BlogCategory =
+  | "Entrepreneurship"
+  | "Business Strategy"
+  | "Digital Marketing"
+  | "E-commerce"
+  | "Technology & AI"
+  | "Growth & Scaling";
+
+export interface BlogSection {
+  id: string;
+  heading: string;
+  paragraphs: string[];
+  bulletPoints?: string[];
+  callout?: string;
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: BlogCategory;
+  authorName: string;
+  authorRole: string;
+  authorBio: string;
+  authorAvatar: string;
+  coverImage: string;
+  publishedAt: string;
+  readTime: string;
+  readMinutes: number;
+  featured?: boolean;
+  tags: string[];
+  keyTakeaways: string[];
+  sections: BlogSection[];
+}
+
+export interface MembershipPackage {
+  id: string;
+  slug: string;
+  name: string;
+  badge?: string;
+  tagline: string;
+  description: string;
+  price: number;
+  originalPrice?: number;
+  billingCycle: string;
+  tierOrder: number;
+  popular?: boolean;
+  bestValue?: boolean;
+  unlockedCourseIds: string[];
+  features: string[];
 }

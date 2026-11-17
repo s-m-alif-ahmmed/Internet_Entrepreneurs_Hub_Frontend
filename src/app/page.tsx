@@ -87,9 +87,9 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#172033] tracking-tight leading-[1.12]">
-                  Build Your Business. <br />
-                  <span className="text-[#2457D6]">Expand Your Knowledge.</span> <br />
-                  Achieve More.
+                  We Help People <br />
+                  <span className="text-[#2457D6]">Turn their knowledge</span> <br />
+                  Into CashFlow
                 </h1>
 
                 <p className="text-base sm:text-lg text-[#64748B] max-w-xl leading-relaxed">
@@ -99,16 +99,16 @@ export default function HomePage() {
                 {/* Hero CTAs */}
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <Link
-                    href="/services"
+                    href="/membership"
                     className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#2457D6] text-white font-bold text-sm hover:bg-[#193F9B] transition-all shadow-lg shadow-blue-500/20 active:scale-95"
                   >
-                    Explore Our Services <ArrowRight className="w-4 h-4" />
+                    Join The Community <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
-                    href="/courses"
+                    href="/services"
                     className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white text-[#172033] border border-slate-200 font-bold text-sm hover:bg-slate-50 hover:border-slate-300 transition-all active:scale-95"
                   >
-                    Explore Courses
+                    Explore Our Services
                   </Link>
                 </div>
 

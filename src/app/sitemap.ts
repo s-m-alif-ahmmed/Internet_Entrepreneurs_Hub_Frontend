@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { INITIAL_COURSES, INITIAL_SERVICES } from "@/lib/mock-data";
+import { INITIAL_BLOGS, INITIAL_COURSES, INITIAL_SERVICES } from "@/lib/mock-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://hub.example.com";
@@ -11,7 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/services",
     "/consultation",
+    "/membership",
     "/courses",
+    "/blogs",
     "/instructors",
     "/live-classes",
     "/contact",
@@ -27,7 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : route.startsWith("/services") || route.startsWith("/courses") ? 0.9 : 0.7,
+    priority:
+      route === ""
+        ? 1.0
+        : route.startsWith("/services") || route.startsWith("/courses") || route.startsWith("/blogs")
+          ? 0.9
+          : 0.7,
   }));
 
   // Dynamic service detail routes
@@ -46,5 +53,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...courseRoutes];
+  // Dynamic blog detail routes
+  const blogRoutes = INITIAL_BLOGS.map((b) => ({
+    url: `${baseUrl}/blogs/${b.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...courseRoutes, ...blogRoutes];
 }

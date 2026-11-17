@@ -8,17 +8,26 @@ import {
   BookOpen,
   Award,
   Video,
-  Clock,
-  ArrowRight,
   Play,
   CheckCircle2,
-  Calendar,
   Sparkles,
+  Crown,
+  ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
 
 export default function StudentDashboardPage() {
-  const { courses, enrolledCourseIds, completedLessons, liveClasses, announcements } = useApp();
+  const {
+    courses,
+    enrolledCourseIds,
+    completedLessons,
+    liveClasses,
+    announcements,
+    membershipPackages,
+    activeMembershipId,
+  } = useApp();
+
+  const activePackage = membershipPackages.find((p) => p.id === activeMembershipId) || null;
 
   const enrolledCourses = courses.filter((c) => enrolledCourseIds.includes(c.id));
   const upcomingClasses = liveClasses.filter((c) => c.status === "Scheduled" || c.status === "Live").slice(0, 2);
@@ -40,6 +49,38 @@ export default function StudentDashboardPage() {
       subtitle="Track your enrolled courses, lesson milestones, and upcoming live broadcasts."
     >
       <div className="space-y-8">
+        {/* Membership Status Banner */}
+        <div className="p-5 sm:p-6 rounded-2xl bg-[#132238] text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-white/10 text-[#E9A23B] flex items-center justify-center shrink-0">
+              <Crown className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#2457D6] text-white text-[10px] font-bold uppercase tracking-wider">
+                  {activePackage ? `${activePackage.name} Package` : "Standard Access"}
+                </span>
+                <span className="text-xs text-slate-300 font-medium">
+                  {enrolledCourses.length} of {courses.length} Courses Unlocked
+                </span>
+              </div>
+              <h2 className="font-heading font-bold text-base sm:text-lg text-white mt-1">
+                {activePackage
+                  ? `Your ${activePackage.name} Membership is active`
+                  : "Unlock more Academy courses with a Membership Package"}
+              </h2>
+            </div>
+          </div>
+
+          <Link
+            href="/membership"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#E9A23B] text-[#132238] text-xs font-extrabold hover:bg-amber-400 transition-colors whitespace-nowrap shrink-0"
+          >
+            <span>{activePackage ? "Manage / Upgrade Plan" : "Explore 4 Packages"}</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
         {/* Metric Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center gap-4">

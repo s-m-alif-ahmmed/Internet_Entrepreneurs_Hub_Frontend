@@ -13,6 +13,7 @@ import {
   SupportTicket,
   Announcement,
   Certificate,
+  MembershipPackage,
 } from "@/types";
 import {
   INITIAL_USERS,
@@ -25,6 +26,7 @@ import {
   INITIAL_TICKETS,
   INITIAL_ANNOUNCEMENTS,
   INITIAL_CERTIFICATES,
+  INITIAL_MEMBERSHIP_PACKAGES,
 } from "./mock-data";
 import { generateRef } from "./utils";
 
@@ -81,6 +83,19 @@ interface AppContextType {
   addAnnouncement: (announcement: Omit<Announcement, "id" | "publishedAt">) => void;
   certificates: Certificate[];
 
+  // Membership Packages
+  membershipPackages: MembershipPackage[];
+  activeMembershipId: string | null;
+  checkoutMembership: MembershipPackage | null;
+  openMembershipCheckout: (pkg: MembershipPackage) => void;
+  closeMembershipCheckout: () => void;
+  purchaseMembership: (
+    pkg: MembershipPackage,
+    paymentMethod: Order["paymentMethod"],
+    discount: number,
+    finalAmount: number
+  ) => string;
+
   // Checkout modal state
   checkoutCourse: Course | null;
   openCheckout: (course: Course) => void;
@@ -120,6 +135,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [tickets, setTickets] = useState<SupportTicket[]>(INITIAL_TICKETS);
   const [announcements, setAnnouncements] = useState<Announcement[]>(INITIAL_ANNOUNCEMENTS);
   const [certificates] = useState<Certificate[]>(INITIAL_CERTIFICATES);
+  const [membershipPackages] = useState<MembershipPackage[]>(INITIAL_MEMBERSHIP_PACKAGES);
+  const [activeMembershipId, setActiveMembershipId] = useState<string | null>(null);
+  const [checkoutMembership, setCheckoutMembership] = useState<MembershipPackage | null>(null);
   const [checkoutCourse, setCheckoutCourse] = useState<Course | null>(null);
   const [notification, setNotification] = useState<string | null>(null);
 
@@ -128,7 +146,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     const timer = setTimeout(() => {
       setUsers(loadState("users", INITIAL_USERS));
       const savedUserId = loadState<string | null>("current_user_id", "usr-student");
-      const active = INITIAL_USERS.find((u) => u.id === savedUserId) || INITIAL_USERS[2];
+      const found = INITIAL_USERS.find(
+        (u) => u.id === savedUserId && (u.role === "student" || u.role === "admin")
+      );
+      const active = found || INITIAL_USERS[2];
       setCurrentUser(active);
       setCourses(loadState("courses", INITIAL_COURSES));
       setEnrolledCourseIds(loadState("enrolled_ids", ["crs-1"]));
@@ -140,6 +161,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       setCoupons(loadState("coupons", INITIAL_COUPONS));
       setTickets(loadState("tickets", INITIAL_TICKETS));
       setAnnouncements(loadState("announcements", INITIAL_ANNOUNCEMENTS));
+      setActiveMembershipId(loadState<string | null>("active_membership_id", null));
     }, 0);
     return () => clearTimeout(timer);
   }, []);
@@ -526,8 +548,59 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     showNotification("Announcement published!");
   };
 
-  const openCheckout = (course: Course) => setCheckoutCourse(course);
+  const openCheckout = (course: Course) => {
+    setCheckoutMembership(null);
+    setCheckoutCourse(course);
+  };
   const closeCheckout = () => setCheckoutCourse(null);
+
+  const openMembershipCheckout = (pkg: MembershipPackage) => {
+    setCheckoutCourse(null);
+    setCheckoutMembership(pkg);
+  };
+  const closeMembershipCheckout = () => setCheckoutMembership(null);
+
+  const purchaseMembership = (
+    pkg: MembershipPackage,
+    paymentMethod: Order["paymentMethod"],
+    discount: number,
+    finalAmount: number
+  ): string => {
+    const referenceNumber = generateRef("IEH-MEM");
+    const newOrder: Order = {
+      id: `ord-${Date.now()}`,
+      referenceNumber,
+      customerName: currentUser?.name || "Demo Student",
+      customerEmail: currentUser?.email || "student@ieh.com",
+      itemType: "membership",
+      itemId: pkg.id,
+      itemTitle: `${pkg.name} Membership Package`,
+      amount: pkg.price,
+      discount,
+      finalAmount,
+      paymentMethod,
+      paymentStatus: "Paid",
+      orderStatus: "Completed",
+      createdAt: new Date().toISOString().split("T")[0],
+    };
+
+    const updatedOrders = [newOrder, ...orders];
+    setOrders(updatedOrders);
+    saveItem("orders", updatedOrders);
+
+    // Activate membership and unlock all courses included in this package
+    setActiveMembershipId(pkg.id);
+    saveItem("active_membership_id", pkg.id);
+
+    const unlockedIds = Array.from(new Set([...enrolledCourseIds, ...pkg.unlockedCourseIds]));
+    setEnrolledCourseIds(unlockedIds);
+    saveItem("enrolled_ids", unlockedIds);
+
+    showNotification(
+      `${pkg.name} Membership activated! ${pkg.unlockedCourseIds.length} courses unlocked in your dashboard.`
+    );
+    return referenceNumber;
+  };
 
   return (
     <AppContext.Provider
@@ -571,6 +644,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         announcements,
         addAnnouncement,
         certificates,
+        membershipPackages,
+        activeMembershipId,
+        checkoutMembership,
+        openMembershipCheckout,
+        closeMembershipCheckout,
+        purchaseMembership,
         checkoutCourse,
         openCheckout,
         closeCheckout,

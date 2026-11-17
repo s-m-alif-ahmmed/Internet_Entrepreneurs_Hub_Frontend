@@ -11,6 +11,8 @@ import {
   Announcement,
   FAQItem,
   Certificate,
+  BlogPost,
+  MembershipPackage,
 } from "@/types";
 
 export const INITIAL_USERS: User[] = [
@@ -1060,5 +1062,395 @@ export const INITIAL_CERTIFICATES: Certificate[] = [
     issueDate: "2025-02-14",
     instructorName: "Dr. Marcus Vance",
     verificationUrl: "https://hub.example.com/verify/IEH-CERT-2025-9901",
+  },
+];
+
+export const INITIAL_BLOGS: BlogPost[] = [
+  {
+    id: "blog-1",
+    slug: "building-resilient-unit-economics-for-modern-startups",
+    title: "Building Resilient Unit Economics: The 2026 Founder Playbook",
+    excerpt:
+      "Growth-at-all-costs is over. Learn how disciplined founders architect healthy CAC-to-LTV ratios, shorten payback periods, and protect cash runway while scaling predictably.",
+    category: "Business Strategy",
+    authorName: "Md. Roman Alom",
+    authorRole: "Founder & CEO, IEH",
+    authorBio:
+      "Serial entrepreneur and strategic business consultant helping early- and growth-stage ventures build repeatable revenue engines and operational clarity.",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    coverImage:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    publishedAt: "2026-11-12",
+    readTime: "7 min read",
+    readMinutes: 7,
+    featured: true,
+    tags: ["Unit Economics", "Startup Strategy", "Cash Flow", "Founder Playbook"],
+    keyTakeaways: [
+      "Measure contribution margin per customer cohort rather than blended top-line revenue.",
+      "Target a CAC payback period under 12 months before accelerating paid acquisition spend.",
+      "Pair pricing tier restructuring with retention milestones to compound Lifetime Value (LTV).",
+    ],
+    sections: [
+      {
+        id: "why-unit-economics-win",
+        heading: "Why Unit Economics Decide Long-Term Survival",
+        paragraphs: [
+          "Across hundreds of advisory engagements at Internet Entrepreneurs Hub, we consistently observe the same inflection point: founders who understand the true profitability of a single customer scale with confidence, while teams chasing vanity top-line metrics hit sudden cash crunches.",
+          "Unit economics strips away accounting noise and answers one essential question: after accounting for direct delivery costs, payment fees, onboarding effort, and acquisition spend, does each new customer make your business stronger or weaker?",
+        ],
+        callout:
+          "Rule of thumb: Never pour paid marketing fuel onto a business model whose gross contribution margin cannot recover acquisition costs within 12 months.",
+      },
+      {
+        id: "mapping-core-metrics",
+        heading: "Mapping the Four Non-Negotiable Metrics",
+        paragraphs: [
+          "Before making hiring or ad-spend commitments, establish a monthly leadership dashboard built around four transparent indicators that everyone on your executive team can verify.",
+        ],
+        bulletPoints: [
+          "Fully Loaded CAC: Include media spend, sales commissions, marketing tools, and agency retainers divided by net new paying customers.",
+          "Gross Contribution Margin: Revenue minus direct cost of goods sold (COGS), cloud/delivery costs, and transaction fees.",
+          "CAC Payback Period: Months required for cumulative contribution margin to recover initial customer acquisition cost.",
+          "Net Revenue Retention (NRR): Measures whether existing clients expand over time even after accounting for churn.",
+        ],
+      },
+      {
+        id: "pricing-and-packaging",
+        heading: "Pricing Architecture as a Growth Lever",
+        paragraphs: [
+          "Most early-stage founders underprice by 20% to 40% out of fear of friction. Yet thoughtful value-based packaging—anchoring tiers around clear business outcomes rather than raw feature checklists—frequently lifts average revenue per account without depressing conversion rates.",
+          "Start by interviewing your top ten most successful clients. Identify the tangible financial or time-saving impact your product or advisory delivers, and align your flagship tier to capture a fair share of that measurable value.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "blog-2",
+    slug: "architecting-scalable-digital-operations-with-ai-automation",
+    title: "Architecting Scalable Digital Operations & Practical AI Automation",
+    excerpt:
+      "A practical technology blueprint for founders and CTOs: how to eliminate SaaS sprawl, connect core workflows, and deploy AI assistants that deliver measurable ROI.",
+    category: "Technology & AI",
+    authorName: "S M Alif Ahmmed",
+    authorRole: "Co-Founder & CTO, IEH",
+    authorBio:
+      "Technology strategist, software architect, and digital transformation advisor guiding modern businesses from fragmented spreadsheets to unified cloud systems.",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    coverImage:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    publishedAt: "2026-11-08",
+    readTime: "8 min read",
+    readMinutes: 8,
+    tags: ["AI Automation", "Tech Architecture", "SaaS Stack", "Digital Transformation"],
+    keyTakeaways: [
+      "Audit and consolidate redundant software subscriptions before introducing new automation layers.",
+      "Automate high-frequency, rule-bound workflows (lead routing, invoicing, onboarding) first.",
+      "Keep humans in the loop for high-stakes client decisions while letting AI draft, triage, and summarize.",
+    ],
+    sections: [
+      {
+        id: "hidden-cost-of-saas-sprawl",
+        heading: "The Hidden Cost of Tool Fragmentation",
+        paragraphs: [
+          "As companies grow from five to fifty employees, teams adopt point solutions in silos: one tool for CRM, another for billing, three spreadsheets for fulfillment, and disconnected chat channels for client support. The real cost is not just monthly licensing—it is lost institutional context.",
+          "When data lives in disconnected silos, leadership cannot forecast accurately and employees spend hours manually copying updates between tabs.",
+        ],
+      },
+      {
+        id: "three-layer-stack",
+        heading: "The Three-Layer Modern Business Stack",
+        paragraphs: [
+          "During technical advisory audits, we restructure operations into three clean, maintainable layers that scale smoothly without heavy engineering overhead:",
+        ],
+        bulletPoints: [
+          "System of Record: One authoritative database or CRM holding customer profiles, orders, and contracts.",
+          "Event & Automation Layer: Webhooks and workflow orchestrators that automatically trigger onboarding emails, invoice generation, and task creation.",
+          "Intelligence & Copilot Layer: Focused AI workflows for ticket triage, meeting summaries, knowledge-base search, and executive reporting.",
+        ],
+        callout:
+          "Automation amplifies process clarity. Standardize the workflow manually first—never automate a broken process.",
+      },
+      {
+        id: "measuring-automation-roi",
+        heading: "Measuring Real ROI Within 60 Days",
+        paragraphs: [
+          "Every technology initiative should have a concrete 60-day scorecard: hours reclaimed per department, reduction in error rates, and faster client response SLAs. If an automation does not move one of those three needles, simplify or retire it.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "blog-3",
+    slug: "high-converting-b2b-content-and-demand-generation",
+    title: "High-Converting Demand Generation: Turning Expertise into Inbound Pipeline",
+    excerpt:
+      "Stop publishing generic blog posts that attract zero buyers. Discover how category-defining thought leadership and structured conversion funnels generate qualified leads every week.",
+    category: "Digital Marketing",
+    authorName: "Elena Rostova",
+    authorRole: "Growth Marketing Director",
+    authorBio:
+      "Former VP of Growth specializing in organic demand capture, performance advertising, and full-funnel conversion optimization.",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    coverImage:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+    publishedAt: "2026-11-02",
+    readTime: "6 min read",
+    readMinutes: 6,
+    tags: ["Demand Generation", "Content Strategy", "Inbound Marketing", "Conversion"],
+    keyTakeaways: [
+      "Write directly for high-intent decision makers by addressing costly operational bottlenecks.",
+      "Every flagship article should pair actionable frameworks with a natural next step (audit, guide, or consultation).",
+      "Repurpose one deep pillar guide into short-form posts, newsletters, and live Q&A workshops.",
+    ],
+    sections: [
+      {
+        id: "shift-from-traffic-to-intent",
+        heading: "Shifting from Vanity Traffic to Buyer Intent",
+        paragraphs: [
+          "Ten thousand untargeted page views rarely outperform three hundred visits from founders actively solving an urgent revenue problem. Modern organic growth prioritizes depth, original operational benchmarks, and clear point-of-view over keyword stuffing.",
+        ],
+      },
+      {
+        id: "distribution-flywheel",
+        heading: "Building a Repeatable Distribution Flywheel",
+        paragraphs: [
+          "Publishing an article is only 30% of the job. High-performing growth teams dedicate 70% of their effort to multi-channel distribution so every insight compounds:",
+        ],
+        bulletPoints: [
+          "Break each long-form guide into 4–5 actionable LinkedIn and newsletter takeaways.",
+          "Host a monthly live workshop expanding on your highest-performing topic.",
+          "Embed contextual CTAs linking directly to relevant consulting services or academy programs.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "blog-4",
+    slug: "scaling-cross-border-ecommerce-operations-without-margin-erosion",
+    title: "Scaling Cross-Border E-Commerce Without Eroding Net Margins",
+    excerpt:
+      "Expanding an online brand into international markets unlocks massive demand—if you master landed-cost modeling, localized fulfillment, and repeat-purchase retention.",
+    category: "E-commerce",
+    authorName: "Tariq Al-Mansoor",
+    authorRole: "E-Commerce Systems Architect",
+    authorBio:
+      "Built automated fulfillment, multi-currency storefronts, and retention systems for high-volume direct-to-consumer and marketplace retailers.",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    coverImage:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+    publishedAt: "2026-10-25",
+    readTime: "6 min read",
+    readMinutes: 6,
+    tags: ["E-commerce", "Supply Chain", "Retention", "Cross-Border"],
+    keyTakeaways: [
+      "Model duties, return logistics, and currency conversion upfront before setting regional retail prices.",
+      "Focus on post-purchase email/SMS retention flows to turn first-time buyers into multi-order advocates.",
+      "Use regional 3PL hubs once a target country crosses 400+ monthly shipments.",
+    ],
+    sections: [
+      {
+        id: "true-landed-cost",
+        heading: "Calculating True Landed Cost Before Launch",
+        paragraphs: [
+          "Many promising D2C brands celebrate international order spikes only to discover months later that customs brokerage, last-mile surcharges, and cross-border returns wiped out their operating margin.",
+          "Always model SKU-level landed cost per target region, factoring in realistic return rates and local payment gateway fees.",
+        ],
+      },
+      {
+        id: "retention-is-profit",
+        heading: "Why Second-Order Velocity Drives Profitability",
+        paragraphs: [
+          "Paid social CPMs continue to climb globally. Brands that win treat the first order as customer acquisition and build their profit engine on orders two, three, and four through curated bundles, loyalty tiers, and proactive delivery communication.",
+        ],
+        bulletPoints: [
+          "Automate proactive shipping milestone notifications to reduce support tickets by up to 35%.",
+          "Offer localized payment methods to boost checkout completion rates immediately.",
+          "Launch replenishment reminders timed to real product consumption cycles.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "blog-5",
+    slug: "from-solo-freelancer-to-structured-digital-agency",
+    title: "From Solo Specialist to Structured Digital Agency: The 5-Stage Roadmap",
+    excerpt:
+      "Transitioning out of trading hours for dollars requires productized offers, documented SOPs, and reliable client delivery systems. Here is how to make the leap cleanly.",
+    category: "Entrepreneurship",
+    authorName: "Dr. Marcus Vance",
+    authorRole: "Senior Business Strategist & Author",
+    authorBio:
+      "Author, educator, and corporate consultant with 15+ years advising founders on operating models, capitalization, and service-business scaling.",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+    coverImage:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+    publishedAt: "2026-10-18",
+    readTime: "5 min read",
+    readMinutes: 5,
+    tags: ["Agency Growth", "Productized Services", "SOPs", "Entrepreneurship"],
+    keyTakeaways: [
+      "Standardize 80% of your service scope into a clear, fixed-outcome package.",
+      "Document repeatable onboarding and delivery checklists before making your first delivery hire.",
+      "Separate sales/strategy ownership from day-to-day fulfillment to break the founder bottleneck.",
+    ],
+    sections: [
+      {
+        id: "breaking-the-hourly-ceiling",
+        heading: "Breaking the Hourly Billing Ceiling",
+        paragraphs: [
+          "Hourly billing penalizes speed and mastery: the better you get at solving a client's problem, the less you earn. Productizing your core expertise around defined deliverables, transparent timelines, and measurable outcomes aligns incentives for both sides.",
+        ],
+      },
+      {
+        id: "documenting-delivery-playbooks",
+        heading: "Documenting Delivery Playbooks Before Hiring",
+        paragraphs: [
+          "Hiring talented people into an undocumented business creates frustration for everyone. Spend two weeks recording Loom walkthroughs and written checklists for your three most common client deliverables before onboarding contractors or full-time specialists.",
+        ],
+        callout:
+          "Your first operational milestone is not revenue volume—it is delivering a client project at 95%+ quality without the founder executing every task personally.",
+      },
+    ],
+  },
+  {
+    id: "blog-6",
+    slug: "preparing-your-business-for-strategic-funding-and-partnerships",
+    title: "Investor & Partner Readiness: What Strategic Backers Actually Audit",
+    excerpt:
+      "Beyond a polished pitch deck, institutional investors and enterprise partners scrutinize governance, financial hygiene, and repeatable growth systems. Prepare with this checklist.",
+    category: "Growth & Scaling",
+    authorName: "Md. Roman Alom",
+    authorRole: "Founder & CEO, IEH",
+    authorBio:
+      "Serial entrepreneur and strategic business consultant helping early- and growth-stage ventures build repeatable revenue engines and operational clarity.",
+    authorAvatar:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    coverImage:
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80",
+    publishedAt: "2026-10-10",
+    readTime: "6 min read",
+    readMinutes: 6,
+    tags: ["Fundraising", "Data Room", "Corporate Governance", "Scaling"],
+    keyTakeaways: [
+      "Maintain a clean, always-ready virtual data room with reconciled P&L, cap table, and customer cohort sheets.",
+      "Demonstrate repeatable customer acquisition rather than relying solely on founder personal networks.",
+      "Clarify exact use-of-funds milestones tied to 18-month revenue and margin targets.",
+    ],
+    sections: [
+      {
+        id: "beyond-the-pitch-deck",
+        heading: "Looking Beyond the Pitch Deck",
+        paragraphs: [
+          "A compelling narrative opens the meeting, but clean operational fundamentals close the deal. Strategic backers evaluate whether your company can absorb capital responsibly and turn every dollar into durable enterprise value.",
+        ],
+      },
+      {
+        id: "data-room-essentials",
+        heading: "The Essential Readiness Checklist",
+        paragraphs: [
+          "Assemble these core artifacts at least 90 days before initiating formal investor or strategic partnership conversations:",
+        ],
+        bulletPoints: [
+          "18- to 24-month bottoms-up financial model with explicit hiring and marketing assumptions.",
+          "Clean historical financial statements and clear revenue recognition documentation.",
+          "Customer cohort retention metrics and anonymized case studies demonstrating measurable client ROI.",
+          "Signed IP assignment agreements, founder equity schedules, and compliant customer contracts.",
+        ],
+      },
+    ],
+  },
+];
+
+export const INITIAL_MEMBERSHIP_PACKAGES: MembershipPackage[] = [
+  {
+    id: "pkg-starter",
+    slug: "starter-membership",
+    name: "Starter",
+    badge: "Foundations",
+    tagline: "Essential launchpad for aspiring founders & solo builders",
+    description:
+      "Unlock core entrepreneurship and high-ticket freelancing tracks to validate your idea and sign your first paying clients.",
+    price: 99,
+    originalPrice: 149,
+    billingCycle: "One-time annual pass",
+    tierOrder: 1,
+    unlockedCourseIds: ["crs-1", "crs-5"],
+    features: [
+      "Unlocks 2 Core Academy Courses",
+      "Lifetime access to course downloads & templates",
+      "Verified completion certificates",
+      "Access to IEH Student Dashboard & progress tracker",
+      "Standard email & support ticket assistance",
+    ],
+  },
+  {
+    id: "pkg-growth",
+    slug: "growth-membership",
+    name: "Growth",
+    badge: "Most Popular",
+    tagline: "Built for operators scaling marketing & customer acquisition",
+    description:
+      "Everything in Starter plus full performance growth marketing frameworks, ad funnels, and live instructor Q&A sessions.",
+    price: 199,
+    originalPrice: 299,
+    billingCycle: "One-time annual pass",
+    tierOrder: 2,
+    popular: true,
+    unlockedCourseIds: ["crs-1", "crs-2", "crs-5"],
+    features: [
+      "Unlocks 3 High-Impact Academy Courses",
+      "Full access to YouTube & Facebook Live Q&A classes",
+      "Paid acquisition & CRO swipe files included",
+      "Verified completion certificates for all 3 tracks",
+      "Priority ticket response from IEH support team",
+    ],
+  },
+  {
+    id: "pkg-pro",
+    slug: "pro-business-membership",
+    name: "Pro Business",
+    badge: "Scaling Teams",
+    tagline: "Complete e-commerce & executive management mastery",
+    description:
+      "Unlock 5 comprehensive programs spanning startup foundations, growth marketing, cross-border e-commerce, and executive leadership.",
+    price: 349,
+    originalPrice: 499,
+    billingCycle: "One-time annual pass",
+    tierOrder: 3,
+    unlockedCourseIds: ["crs-1", "crs-2", "crs-3", "crs-4", "crs-5"],
+    features: [
+      "Unlocks 5 Comprehensive Academy Courses",
+      "Global E-Commerce & Executive Management tracks",
+      "Live classes + full recorded workshop archive",
+      "Quarterly group strategy review session",
+      "Priority support & verified completion certificates",
+    ],
+  },
+  {
+    id: "pkg-executive",
+    slug: "executive-all-access",
+    name: "Executive All-Access",
+    badge: "Best Value",
+    tagline: "Every IEH course plus cloud, security & AI leadership",
+    description:
+      "Unrestricted access to the entire IEH Academy library—all 6 courses including Business Technology Architecture—plus VIP executive perks.",
+    price: 499,
+    originalPrice: 799,
+    billingCycle: "One-time lifetime pass",
+    tierOrder: 4,
+    bestValue: true,
+    unlockedCourseIds: ["crs-1", "crs-2", "crs-3", "crs-4", "crs-5", "crs-6"],
+    features: [
+      "Unlocks ALL 6 Academy Courses immediately",
+      "Includes Business Technology Architecture (Cloud & AI)",
+      "Complimentary 1-on-1 executive onboarding call",
+      "VIP access to all live classes & future course drops",
+      "Dedicated advisory support & verified certificates",
+    ],
   },
 ];

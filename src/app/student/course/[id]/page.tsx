@@ -12,10 +12,10 @@ import {
   ChevronLeft,
   ChevronRight,
   Download,
-  BookOpen,
-  Award,
   ChevronDown,
   ChevronUp,
+  Lock,
+  Crown,
 } from "lucide-react";
 
 export default function StudentCourseLearningPage({
@@ -24,7 +24,14 @@ export default function StudentCourseLearningPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = use(params);
-  const { courses, completedLessons, toggleLessonCompleted } = useApp();
+  const {
+    courses,
+    enrolledCourseIds,
+    membershipPackages,
+    openMembershipCheckout,
+    completedLessons,
+    toggleLessonCompleted,
+  } = useApp();
 
       const course = courses.find((c) => c.id === id);
       if(!course) {
@@ -45,6 +52,65 @@ export default function StudentCourseLearningPage({
       );
 
       const [expandedModuleId, setExpandedModuleId] = useState<string>(course.modules[0]?.id || "");
+
+      const isUnlocked = enrolledCourseIds.includes(course.id);
+      const requiredPkg =
+        membershipPackages
+          .filter((pkg) => pkg.unlockedCourseIds.includes(course.id))
+          .sort((a, b) => a.tierOrder - b.tierOrder)[0] || null;
+
+      if (!isUnlocked) {
+        return (
+          <DashboardLayout
+            allowedRole="student"
+            title={course.title}
+            subtitle="This course requires a membership package upgrade to unlock."
+          >
+            <div className="max-w-xl mx-auto py-12">
+              <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 text-center space-y-5 shadow-xs">
+                <div className="w-16 h-16 rounded-2xl bg-blue-50 text-[#2457D6] flex items-center justify-center mx-auto">
+                  <Lock className="w-8 h-8" />
+                </div>
+                <div className="space-y-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold">
+                    <Crown className="w-3.5 h-3.5" />
+                    {requiredPkg ? `Included in ${requiredPkg.name} Membership` : "Membership Required"}
+                  </span>
+                  <h2 className="font-heading font-extrabold text-2xl text-[#172033]">
+                    Course Locked
+                  </h2>
+                  <p className="text-sm text-[#64748B] leading-relaxed">
+                    Activate the{" "}
+                    <strong className="text-[#172033]">
+                      {requiredPkg ? `${requiredPkg.name} ($${requiredPkg.price})` : "eligible"}
+                    </strong>{" "}
+                    membership package to unlock <strong className="text-[#172033]">{course.title}</strong>{" "}
+                    and all its video lessons immediately in your dashboard.
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                  {requiredPkg && (
+                    <button
+                      onClick={() => openMembershipCheckout(requiredPkg)}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#2457D6] text-white text-xs font-bold hover:bg-[#193F9B] transition-colors cursor-pointer"
+                    >
+                      <Crown className="w-4 h-4 text-[#E9A23B]" />
+                      <span>Unlock with {requiredPkg.name} (${requiredPkg.price})</span>
+                    </button>
+                  )}
+                  <Link
+                    href="/membership"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 transition-colors"
+                  >
+                    Compare All 4 Packages
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </DashboardLayout>
+        );
+      }
 
       const handleNext = () => {
         if (currentLessonIndex < allLessons.length - 1) {

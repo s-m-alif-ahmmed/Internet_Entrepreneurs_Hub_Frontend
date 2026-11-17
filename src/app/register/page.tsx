@@ -25,7 +25,6 @@ export default function RegisterPage() {
     phone: "",
     password: "",
     confirmPassword: "",
-    role: "student" as "student" | "client",
     company: "",
     acceptedTerms: false,
   });
@@ -62,11 +61,11 @@ export default function RegisterPage() {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-        role: formData.role,
+        role: "student",
         company: formData.company,
       });
       setIsSubmitting(false);
-      router.push(formData.role === "client" ? "/client/dashboard" : "/student/dashboard");
+      router.push("/student/dashboard");
     }, 700);
   };
 
@@ -92,37 +91,6 @@ export default function RegisterPage() {
 
         <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl space-y-5">
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Account Type Selector */}
-            <div>
-              <label className="block text-xs font-bold text-[#172033] mb-1.5">
-                Account Type
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                <button
-                  type="button"
-                  onClick={() => setFormData({ ...formData, role: "student" })}
-                  className={`p-3 rounded-xl border text-xs font-bold transition-all text-center ${
-                    formData.role === "student"
-                      ? "border-[#2457D6] bg-blue-50/50 text-[#193F9B]"
-                      : "border-slate-200 text-slate-600 hover:bg-slate-50"
-                  }`}
-                >
-                  Student (Academy)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setFormData({ ...formData, role: "client" })}
-                  className={`p-3 rounded-xl border text-xs font-bold transition-all text-center ${
-                    formData.role === "client"
-                      ? "border-[#2457D6] bg-blue-50/50 text-[#193F9B]"
-                      : "border-slate-200 text-slate-600 hover:bg-slate-50"
-                  }`}
-                >
-                  Client (Consultancy)
-                </button>
-              </div>
-            </div>
-
             {/* Name */}
             <div>
               <label className="block text-xs font-bold text-[#172033] mb-1.5">

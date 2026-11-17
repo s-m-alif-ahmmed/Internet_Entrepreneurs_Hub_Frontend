@@ -78,23 +78,6 @@ export function DashboardLayout({
         { label: "Reports", href: "/admin/reports", icon: BarChart3 },
         { label: "Settings", href: "/admin/settings", icon: Settings },
       ];
-    } else if (pathname.startsWith("/instructor")) {
-      return [
-        { label: "Overview", href: "/instructor/dashboard", icon: LayoutDashboard },
-        { label: "My Courses", href: "/instructor/courses", icon: BookOpen },
-        { label: "Enrolled Students", href: "/instructor/students", icon: Users },
-        { label: "Live Classes", href: "/instructor/live-classes", icon: Video },
-        { label: "Announcements", href: "/instructor/announcements", icon: Megaphone },
-        { label: "Profile", href: "/instructor/profile", icon: User },
-      ];
-    } else if (pathname.startsWith("/client")) {
-      return [
-        { label: "Overview", href: "/client/dashboard", icon: LayoutDashboard },
-        { label: "My Consultations", href: "/client/consultations", icon: CalendarCheck },
-        { label: "Orders & Invoices", href: "/client/orders", icon: CreditCard },
-        { label: "Support Desk", href: "/client/support", icon: HelpCircle },
-        { label: "Client Profile", href: "/client/profile", icon: User },
-      ];
     } else {
       // Default: Student
       return [
@@ -161,7 +144,7 @@ export function DashboardLayout({
           {/* Quick role switch for demo testing */}
           <div className="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-xs">
             <span className="text-[10px] text-slate-400 font-bold uppercase px-1.5">Demo:</span>
-            {(["student", "client", "instructor", "admin"] as const).map((r) => (
+            {(["student", "admin"] as const).map((r) => (
               <button
                 key={r}
                 onClick={() => {
