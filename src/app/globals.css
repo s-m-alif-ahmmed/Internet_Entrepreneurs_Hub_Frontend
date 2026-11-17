@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #2457D6;
+  --primary-dark: #193F9B;
+  --secondary: #132238;
+  --accent: #E9A23B;
+  --background: #FFFFFF;
+  --secondary-bg: #F5F7FB;
+  --card: #FFFFFF;
+  --text-primary: #172033;
+  --text-secondary: #64748B;
+  --border: #E5EAF1;
+  --success: #16A36A;
+  --warning: #E9A23B;
+  --danger: #DC4545;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-secondary-bg: var(--secondary-bg);
+  --color-card: var(--card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-plus-jakarta), var(--font-inter), sans-serif;
+}
+
+/* Light mode only - enforced globally */
+html, body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
