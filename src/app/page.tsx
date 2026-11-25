@@ -131,39 +131,39 @@ export default function HomePage() {
               <div className="lg:col-span-5 relative">
                 <div className="relative mx-auto max-w-md lg:max-w-none">
                   {/* Visual Container */}
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white h-[480px] sm:h-[540px] lg:h-[600px] w-full">
-                      <Image
-                        src="/photo-1.jpeg"
-                        alt="Professional business consulting and entrepreneurship strategy session at IEH"
-                        fill
-                        priority
-                        className="object-cover object-center"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                      <div className="absolute bottom-6 left-6 right-6 text-white">
-                        <p className="text-xs uppercase tracking-widest text-[#E9A23B] font-bold">
-                          Corporate Advisory & Academy
-                        </p>
-                        <h3 className="font-heading font-bold text-lg leading-snug">
-                          Where strategy meets high-impact online education.
-                        </h3>
-                      </div>
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white h-[480px] sm:h-[540px] lg:h-[600px] w-full">
+                    <Image
+                      src="/photo-1.jpeg"
+                      alt="Professional business consulting and entrepreneurship strategy session at IEH"
+                      fill
+                      priority
+                      className="object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6 text-white">
+                      <p className="text-xs uppercase tracking-widest text-[#E9A23B] font-bold">
+                        Corporate Advisory & Academy
+                      </p>
+                      <h3 className="font-heading font-bold text-lg leading-snug">
+                        Where strategy meets high-impact online education.
+                      </h3>
                     </div>
+                  </div>
 
-                    {/* Floating Stat Card */}
-                    <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#2457D6]">
-                        <Briefcase className="w-6 h-6" />
-                      </div>
-                      <div>
-                        <p className="text-xs text-[#64748B] font-medium">Consultancy Division</p>
-                        <p className="text-sm font-extrabold text-[#172033]">Tailored Advisory</p>
-                      </div>
+                  {/* Floating Stat Card */}
+                  <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#2457D6]">
+                      <Briefcase className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[#64748B] font-medium">Consultancy Division</p>
+                      <p className="text-sm font-extrabold text-[#172033]">Tailored Advisory</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </section>
 
         {/* CORE SERVICES SECTION */}
@@ -605,132 +605,132 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
               {/* Leader 1 */}
-              <div className="bg-[#F5F7FB] p-8 rounded-3xl border border-slate-200/90 text-center space-y-4">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-white shadow-md">
-                  <Image
-                    src="/photo-2.jpeg"
-                    alt="Md. Roman Alom — Founder & CEO"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-heading font-extrabold text-xl text-[#172033]">
-                    Md. Roman Alom
-                  </h3>
-                  <p className="text-sm font-bold text-[#2457D6] mt-0.5">Founder & CEO</p>
-                </div>
-                <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                  Steering IEH’s overarching strategic vision, corporate advisory relationships, and global entrepreneurial partnerships.
-                </p>
-              </div>
+                  <div className="bg-[#F5F7FB] p-8 rounded-3xl border border-slate-200/90 text-center space-y-5">
+                    <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden mx-auto border-4 border-white shadow-lg">
+                      <Image
+                        src="/photo-2.jpeg"
+                        alt="Md. Roman Alom — Founder & CEO"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                        <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#172033]">
+                          Md. Roman Alom
+                        </h3>
+                        <p className="text-sm font-bold text-[#2457D6] mt-0.5">Founder & CEO</p>
+                    </div>
+                    <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                      Steering IEH’s overarching strategic vision, corporate advisory relationships, and global entrepreneurial partnerships.
+                    </p>
+                  </div>
 
-              {/* Leader 2 */}
-              <div className="bg-[#F5F7FB] p-8 rounded-3xl border border-slate-200/90 text-center space-y-4">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-white shadow-md">
-                  <Image
-                    src="/s_m_alif_ahmmed.png"
-                    alt="S M Alif Ahmmed — Co-Founder & CTO"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-heading font-extrabold text-xl text-[#172033]">
-                    S M Alif Ahmmed
-                  </h3>
-                  <p className="text-sm font-bold text-[#2457D6] mt-0.5">Co-Founder & CTO</p>
-                </div>
-                <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                  Directing technical architecture, online learning platforms, digital product innovations, and client technology advisory.
-                </p>
-              </div>
+                  {/* Leader 2 */}
+                      <div className="bg-[#F5F7FB] p-8 rounded-3xl border border-slate-200/90 text-center space-y-5">
+                        <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden mx-auto border-4 border-white shadow-lg">
+                          <Image
+                            src="/s_m_alif_ahmmed.png"
+                            alt="S M Alif Ahmmed — Co-Founder & CTO"
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div>
+                            <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#172033]">
+                              S M Alif Ahmmed
+                            </h3>
+                            <p className="text-sm font-bold text-[#2457D6] mt-0.5">Co-Founder & CTO</p>
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                          Directing technical architecture, online learning platforms, digital product innovations, and client technology advisory.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* TESTIMONIALS CAROUSEL */}
+                <section className="py-20 bg-[#F5F7FB] border-t border-slate-200">
+                  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span className="text-xs font-bold text-[#2457D6] uppercase tracking-wider block mb-2">
+                      Client Feedback
+                    </span>
+                    <h2 className="font-heading font-extrabold text-3xl text-[#172033] tracking-tight mb-10">
+                      Trusted by Founders & Builders
+                    </h2>
+
+                    <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-md relative">
+                      <p className="text-base sm:text-lg text-slate-700 italic leading-relaxed mb-8">
+                        &ldquo;{testimonials[activeTestimonial].content}&rdquo;
+                      </p>
+
+                      <div className="flex items-center justify-center gap-3">
+                        <div className="relative w-12 h-12 rounded-full overflow-hidden border border-slate-200">
+                          <Image
+                            src={testimonials[activeTestimonial].avatar}
+                            alt={testimonials[activeTestimonial].name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="text-left">
+                          <h3 className="font-heading font-bold text-sm text-[#172033]">
+                            {testimonials[activeTestimonial].name}
+                          </h3>
+                          <p className="text-xs text-[#64748B]">{testimonials[activeTestimonial].role}</p>
+                        </div>
+                      </div>
+
+                      {/* Navigation arrows */}
+                      <div className="flex justify-center gap-2 mt-8">
+                        <button
+                          onClick={prevTestimonial}
+                          className="p-2 rounded-full border border-slate-200 hover:bg-slate-50 text-slate-600"
+                          aria-label="Previous testimonial"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={nextTestimonial}
+                          className="p-2 rounded-full border border-slate-200 hover:bg-slate-50 text-slate-600"
+                          aria-label="Next testimonial"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* FINAL CTA */}
+                <section className="py-20 bg-gradient-to-r from-[#193F9B] to-[#2457D6] text-white">
+                  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+                    <h2 className="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight">
+                      Your Next Step Starts with IEH
+                    </h2>
+                    <p className="text-base sm:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed">
+                      Whether you need professional business guidance or practical learning, we are here to help you navigate every stage of your entrepreneurial journey.
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+                      <Link
+                        href="/consultation"
+                        className="px-8 py-4 rounded-xl bg-white text-[#193F9B] font-bold text-sm shadow-xl hover:bg-slate-100 transition-colors"
+                      >
+                        Get Consultation
+                      </Link>
+                      <Link
+                        href="/courses"
+                        className="px-8 py-4 rounded-xl bg-blue-700/60 border border-blue-400/40 text-white font-bold text-sm hover:bg-blue-700 transition-colors"
+                      >
+                        Explore Courses
+                      </Link>
+                    </div>
+                  </div>
+                </section>
+              </main>
+
+              {/* Footer */}
+              <Footer />
             </div>
-          </div>
-        </section>
-
-        {/* TESTIMONIALS CAROUSEL */}
-        <section className="py-20 bg-[#F5F7FB] border-t border-slate-200">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="text-xs font-bold text-[#2457D6] uppercase tracking-wider block mb-2">
-              Client Feedback
-            </span>
-            <h2 className="font-heading font-extrabold text-3xl text-[#172033] tracking-tight mb-10">
-              Trusted by Founders & Builders
-            </h2>
-
-            <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-md relative">
-              <p className="text-base sm:text-lg text-slate-700 italic leading-relaxed mb-8">
-                &ldquo;{testimonials[activeTestimonial].content}&rdquo;
-              </p>
-
-              <div className="flex items-center justify-center gap-3">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-slate-200">
-                  <Image
-                    src={testimonials[activeTestimonial].avatar}
-                    alt={testimonials[activeTestimonial].name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="text-left">
-                  <h3 className="font-heading font-bold text-sm text-[#172033]">
-                    {testimonials[activeTestimonial].name}
-                  </h3>
-                  <p className="text-xs text-[#64748B]">{testimonials[activeTestimonial].role}</p>
-                </div>
-              </div>
-
-              {/* Navigation arrows */}
-              <div className="flex justify-center gap-2 mt-8">
-                <button
-                  onClick={prevTestimonial}
-                  className="p-2 rounded-full border border-slate-200 hover:bg-slate-50 text-slate-600"
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={nextTestimonial}
-                  className="p-2 rounded-full border border-slate-200 hover:bg-slate-50 text-slate-600"
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FINAL CTA */}
-        <section className="py-20 bg-gradient-to-r from-[#193F9B] to-[#2457D6] text-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight">
-              Your Next Step Starts with IEH
-            </h2>
-            <p className="text-base sm:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed">
-              Whether you need professional business guidance or practical learning, we are here to help you navigate every stage of your entrepreneurial journey.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-              <Link
-                href="/consultation"
-                className="px-8 py-4 rounded-xl bg-white text-[#193F9B] font-bold text-sm shadow-xl hover:bg-slate-100 transition-colors"
-              >
-                Get Consultation
-              </Link>
-              <Link
-                href="/courses"
-                className="px-8 py-4 rounded-xl bg-blue-700/60 border border-blue-400/40 text-white font-bold text-sm hover:bg-blue-700 transition-colors"
-              >
-                Explore Courses
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
-  );
+            );
 }

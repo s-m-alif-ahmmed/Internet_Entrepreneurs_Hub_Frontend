@@ -179,15 +179,15 @@ export function Navbar() {
               <div className="flex items-center gap-2 shrink-0">
                 <Link
                   href="/login"
-                  className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-700 hover:text-[#2457D6] hover:bg-slate-50 transition-colors whitespace-nowrap shrink-0"
+                  className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-semibold text-slate-700 hover:text-[#2457D6] hover:bg-slate-50 border border-slate-200 transition-colors whitespace-nowrap shrink-0"
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/register"
-                  className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-semibold text-[#2457D6] bg-blue-50/60 hover:bg-blue-100 transition-colors whitespace-nowrap shrink-0"
+                  className="px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold text-[#2457D6] bg-blue-50/70 hover:bg-blue-100 border border-blue-200/80 transition-colors whitespace-nowrap shrink-0"
                 >
-                  Register
+                  Sign Up
                 </Link>
               </div>
             )}
@@ -259,15 +259,17 @@ export function Navbar() {
                 <div className="grid grid-cols-2 gap-2">
                   <Link
                     href="/login"
-                    className="py-2 text-center text-sm font-semibold text-slate-700 border border-slate-200 rounded-xl"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2.5 text-center text-sm font-semibold text-slate-700 border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors"
                   >
                     Sign In
                   </Link>
                   <Link
                     href="/register"
-                    className="py-2 text-center text-sm font-semibold text-white bg-[#2457D6] rounded-xl"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2.5 text-center text-sm font-bold text-white bg-[#2457D6] hover:bg-[#193F9B] rounded-xl shadow-xs transition-colors"
                   >
-                    Register
+                    Sign Up
                   </Link>
                 </div>
               )}

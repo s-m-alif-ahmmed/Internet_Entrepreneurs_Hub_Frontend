@@ -37,7 +37,7 @@ interface AppContextType {
   logout: () => void;
   registerUser: (data: { name: string; email: string; phone?: string; role: "student" | "client"; company?: string }) => User;
   updateProfile: (updates: Partial<User>) => void;
-  
+
   // Courses & Learning
   courses: Course[];
   enrolledCourseIds: string[];
@@ -47,7 +47,7 @@ interface AppContextType {
   addCourse: (course: Partial<Course>) => void;
   updateCourse: (id: string, updates: Partial<Course>) => void;
   deleteCourse: (id: string) => void;
-  
+
   // Services & Consultations
   services: Service[];
   consultations: ConsultationRequest[];
@@ -121,7 +121,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   };
 
   const [users, setUsers] = useState<User[]>(INITIAL_USERS);
-  const [currentUser, setCurrentUser] = useState<User | null>(INITIAL_USERS[2]); // Default as student (Sarah Jenkins) for demo convenience
+  const [currentUser, setCurrentUser] = useState<User | null>(null); // Unauthenticated visitor by default
   const [courses, setCourses] = useState<Course[]>(INITIAL_COURSES);
   const [enrolledCourseIds, setEnrolledCourseIds] = useState<string[]>(["crs-1"]);
   const [completedLessons, setCompletedLessons] = useState<Record<string, string[]>>({
@@ -145,12 +145,15 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setUsers(loadState("users", INITIAL_USERS));
-      const savedUserId = loadState<string | null>("current_user_id", "usr-student");
-      const found = INITIAL_USERS.find(
-        (u) => u.id === savedUserId && (u.role === "student" || u.role === "admin")
-      );
-      const active = found || INITIAL_USERS[2];
-      setCurrentUser(active);
+      const savedUserId = loadState<string | null>("session_user_id", null);
+      if (savedUserId) {
+        const found = INITIAL_USERS.find(
+          (u) => u.id === savedUserId && (u.role === "student" || u.role === "admin")
+        );
+        setCurrentUser(found || null);
+      } else {
+        setCurrentUser(null);
+      }
       setCourses(loadState("courses", INITIAL_COURSES));
       setEnrolledCourseIds(loadState("enrolled_ids", ["crs-1"]));
       setCompletedLessons(loadState("completed_lessons", { "crs-1": ["les-1", "les-2"] }));
@@ -186,12 +189,14 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const loginAs = (role: UserRole) => {
     const target = users.find((u) => u.role === role) || users[0];
     setCurrentUser(target);
+    saveItem("session_user_id", target.id);
     saveItem("current_user_id", target.id);
     showNotification(`Logged in as ${target.name} (${target.role.toUpperCase()})`);
   };
 
   const logout = () => {
     setCurrentUser(null);
+    saveItem("session_user_id", null);
     saveItem("current_user_id", null);
     showNotification("You have been logged out.");
   };
@@ -219,6 +224,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setUsers(updated);
     setCurrentUser(newUser);
     saveItem("users", updated);
+    saveItem("session_user_id", newUser.id);
     saveItem("current_user_id", newUser.id);
     showNotification(`Welcome to IEH, ${newUser.name}!`);
     return newUser;

@@ -152,73 +152,73 @@ export default function AboutPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 text-center space-y-4 shadow-xs">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-slate-100 shadow-md">
-                  <Image
-                    src="/photo-2.jpeg"
-                    alt="Md. Roman Alom"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-heading font-extrabold text-xl text-[#172033]">Md. Roman Alom</h3>
-                  <p className="text-sm font-bold text-[#2457D6]">Founder & CEO</p>
-                </div>
-                <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                  Leads overall company vision, consulting practices, investor relations, and strategic corporate governance.
-                </p>
-              </div>
+                  <div className="bg-white p-8 rounded-3xl border border-slate-200 text-center space-y-5 shadow-xs">
+                    <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden mx-auto border-4 border-slate-100 shadow-lg">
+                      <Image
+                        src="/photo-2.jpeg"
+                        alt="Md. Roman Alom"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#172033]">Md. Roman Alom</h3>
+                      <p className="text-sm font-bold text-[#2457D6] mt-0.5">Founder & CEO</p>
+                    </div>
+                    <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                      Leads overall company vision, consulting practices, investor relations, and strategic corporate governance.
+                    </p>
+                  </div>
 
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 text-center space-y-4 shadow-xs">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-slate-100 shadow-md">
-                  <Image
-                    src="/s_m_alif_ahmmed.png"
-                    alt="S M Alif Ahmmed"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-heading font-extrabold text-xl text-[#172033]">S M Alif Ahmmed</h3>
-                  <p className="text-sm font-bold text-[#2457D6]">Co-Founder & CTO</p>
-                </div>
-                <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                  Oversees engineering architecture, digital academy infrastructure, technology consulting, and learning systems.
-                </p>
-              </div>
+                      <div className="bg-white p-8 rounded-3xl border border-slate-200 text-center space-y-5 shadow-xs">
+                        <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden mx-auto border-4 border-slate-100 shadow-lg">
+                          <Image
+                            src="/s_m_alif_ahmmed.png"
+                            alt="S M Alif Ahmmed"
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-[#172033]">S M Alif Ahmmed</h3>
+                          <p className="text-sm font-bold text-[#2457D6] mt-0.5">Co-Founder & CTO</p>
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                          Oversees engineering architecture, digital academy infrastructure, technology consulting, and learning systems.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                {/* CTA */}
+                <section className="py-20 bg-[#132238] text-white">
+                  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+                    <h2 className="font-heading font-extrabold text-3xl sm:text-4xl tracking-tight">
+                      Let&apos;s Build Something Better Together
+                    </h2>
+                    <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto">
+                      Ready to explore strategic business consulting or enroll in our next academy cohort?
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+                      <Link
+                        href="/consultation"
+                        className="px-6 py-3.5 rounded-xl bg-[#2457D6] text-white font-bold text-sm hover:bg-[#193F9B] transition-colors"
+                      >
+                        Schedule a Consultation
+                      </Link>
+                      <Link
+                        href="/contact"
+                        className="px-6 py-3.5 rounded-xl bg-slate-800 border border-slate-700 text-white font-bold text-sm hover:bg-slate-700 transition-colors"
+                      >
+                        Contact Our Team
+                      </Link>
+                    </div>
+                  </div>
+                </section>
+              </main>
+
+              <Footer />
             </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-20 bg-[#132238] text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl tracking-tight">
-              Let&apos;s Build Something Better Together
-            </h2>
-            <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto">
-              Ready to explore strategic business consulting or enroll in our next academy cohort?
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-              <Link
-                href="/consultation"
-                className="px-6 py-3.5 rounded-xl bg-[#2457D6] text-white font-bold text-sm hover:bg-[#193F9B] transition-colors"
-              >
-                Schedule a Consultation
-              </Link>
-              <Link
-                href="/contact"
-                className="px-6 py-3.5 rounded-xl bg-slate-800 border border-slate-700 text-white font-bold text-sm hover:bg-slate-700 transition-colors"
-              >
-                Contact Our Team
-              </Link>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
-  );
+            );
 }
