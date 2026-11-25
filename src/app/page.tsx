@@ -131,39 +131,39 @@ export default function HomePage() {
               <div className="lg:col-span-5 relative">
                 <div className="relative mx-auto max-w-md lg:max-w-none">
                   {/* Visual Container */}
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-[4/3]">
-                    <Image
-                      src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
-                      alt="Professional business consulting and entrepreneurship strategy session at IEH"
-                      fill
-                      priority
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                    <div className="absolute bottom-6 left-6 right-6 text-white">
-                      <p className="text-xs uppercase tracking-widest text-[#E9A23B] font-bold">
-                        Corporate Advisory & Academy
-                      </p>
-                      <h3 className="font-heading font-bold text-lg leading-snug">
-                        Where strategy meets high-impact online education.
-                      </h3>
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white h-[480px] sm:h-[540px] lg:h-[600px] w-full">
+                      <Image
+                        src="/photo-1.jpeg"
+                        alt="Professional business consulting and entrepreneurship strategy session at IEH"
+                        fill
+                        priority
+                        className="object-cover object-center"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+                      <div className="absolute bottom-6 left-6 right-6 text-white">
+                        <p className="text-xs uppercase tracking-widest text-[#E9A23B] font-bold">
+                          Corporate Advisory & Academy
+                        </p>
+                        <h3 className="font-heading font-bold text-lg leading-snug">
+                          Where strategy meets high-impact online education.
+                        </h3>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Floating Stat Card */}
-                  <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#2457D6]">
-                      <Briefcase className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-[#64748B] font-medium">Consultancy Division</p>
-                      <p className="text-sm font-extrabold text-[#172033]">Tailored Advisory</p>
+                    {/* Floating Stat Card */}
+                    <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 hidden sm:flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-[#2457D6]">
+                        <Briefcase className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-[#64748B] font-medium">Consultancy Division</p>
+                        <p className="text-sm font-extrabold text-[#172033]">Tailored Advisory</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
         </section>
 
         {/* CORE SERVICES SECTION */}
@@ -608,7 +608,7 @@ export default function HomePage() {
               <div className="bg-[#F5F7FB] p-8 rounded-3xl border border-slate-200/90 text-center space-y-4">
                 <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-white shadow-md">
                   <Image
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+                    src="/photo-2.jpeg"
                     alt="Md. Roman Alom — Founder & CEO"
                     fill
                     className="object-cover"
@@ -629,7 +629,7 @@ export default function HomePage() {
               <div className="bg-[#F5F7FB] p-8 rounded-3xl border border-slate-200/90 text-center space-y-4">
                 <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-white shadow-md">
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+                    src="/s_m_alif_ahmmed.png"
                     alt="S M Alif Ahmmed — Co-Founder & CTO"
                     fill
                     className="object-cover"

@@ -14,7 +14,6 @@ The Internet Entrepreneurs Hub (IEH) business consultancy and online learning pl
 
 ## 2. Completed Items & Route Architecture
 
-
 ### Public Website (Routes 1–16) — 100% Complete
 
 - [x] **Route 1 (`/`):** Strategic homepage showcasing Division 1 (Business Consultancy), Division 2 (IEH Academy), Hero with metrics, founders spotlight, interactive services grid, course catalog, live classes showcase, and testimonials.
@@ -26,7 +25,7 @@ The Internet Entrepreneurs Hub (IEH) business consultancy and online learning pl
 - [x] **Route 7 (`/courses/[slug]`):** Dynamic course syllabus page with multi-module curriculum player, instructor credential cards, learning outcomes, reviews, and related courses.
 - [x] **Route 8 (`/instructors`):** Faculty directory featuring senior instructors, specialized disciplines, courses taught, and student ratings.
 - [x] **Route 9 (`/live-classes`):** Interactive live broadcast schedule for YouTube Live and Facebook Live with status badges (Live, Scheduled, Completed).
-- [x] **Route 10 (`/contact`):** Corporate inquiries, strategic partnerships, consultation request shortcuts, interactive form, and office hours.
+- [x] **Route 10 (`/contact`):** Left-side dedicated information panel displaying Office Address (`Link Road, Gulshan, Dhaka - 1212`) with embedded interactive Google Map and directions link, Contact Numbers (Helpline, WhatsApp, Email Desk), and Opening Hours (Sun-Thu 9am-6pm, Sat 10am-4pm, Fri closed, 24/7 digital platform), and right-side interactive corporate inquiry submission form.
 - [x] **Route 11 (`/faq`):** Categorized accordion FAQ explorer with interactive category filtering (All, Courses, Consultation, Payment, Technical).
 - [x] **Route 12 (`/support`):** Comprehensive help center with ticket submission desk, priority select, and instant reference assignment.
 - [x] **Route 13 (`/terms-and-conditions`):** Complete legal terms for consultancy advisory, academy licensing, intellectual property, and user conduct.
@@ -37,7 +36,6 @@ The Internet Entrepreneurs Hub (IEH) business consultancy and online learning pl
 - [x] **Blog Details (`/blogs/[slug]`):** Dynamic article reader with breadcrumbs, key takeaways, sticky Table of Contents, bookmark/share controls, author bio, interactive comments, and related articles.
 - [x] **Membership Packages (`/membership`):** 4 tiered membership plans (`Starter`, `Growth`, `Pro Business`, `Executive All-Access`) with comparison matrix, promo-enabled checkout, and automatic course unlocking inside the Student Dashboard (`/student/dashboard`, `/student/my-courses`, `/student/course/[id]`).
 
-
 ### Authentication & Account Access (Routes 17–21) — 100% Complete
 
 - [x] **Route 17 (`/login`):** Role-based authentication form with 1-click demo login buttons for Student, Client, Instructor, and Admin roles.
@@ -45,7 +43,6 @@ The Internet Entrepreneurs Hub (IEH) business consultancy and online learning pl
 - [x] **Route 19 (`/forgot-password`):** Simulated password recovery workflow with immediate confirmation email feedback.
 - [x] **Route 20 (`/reset-password`):** Secure token-based password reset simulation with validation checks.
 - [x] **Route 21 (`/verify-email`):** One-click account activation simulation with countdown redirect to login.
-
 
 ### Student Workspace (Routes 22–30) — 100% Complete
 
@@ -60,6 +57,7 @@ The Internet Entrepreneurs Hub (IEH) business consultancy and online learning pl
 - [x] **Route 30 (`/student/support`):** Student-facing ticket desk with real-time response messaging and status updates.
 
 ### Removed Workspaces
+
 - Client Dashboard (`/client/*`) and Instructor Dashboard (`/instructor/*`) removed; only **Student** (`/student/*`) and **Admin** (`/admin/*`) dashboards and demo logins remain active.
 
 ### Admin Workspace (Routes 43–61) — 100% Complete

@@ -549,7 +549,7 @@ export const INITIAL_COURSES: Course[] = [
     instructorName: "Tariq Al-Mansoor",
     instructorTitle: "E-Commerce Systems Architect",
     instructorAvatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=800&q=80",
+    thumbnail: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
     price: 219,
     discountPrice: 169,
     duration: "16.8 hours",

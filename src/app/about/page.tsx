@@ -155,7 +155,7 @@ export default function AboutPage() {
               <div className="bg-white p-8 rounded-3xl border border-slate-200 text-center space-y-4 shadow-xs">
                 <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-slate-100 shadow-md">
                   <Image
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+                    src="/photo-2.jpeg"
                     alt="Md. Roman Alom"
                     fill
                     className="object-cover"
@@ -173,7 +173,7 @@ export default function AboutPage() {
               <div className="bg-white p-8 rounded-3xl border border-slate-200 text-center space-y-4 shadow-xs">
                 <div className="relative w-28 h-28 rounded-full overflow-hidden mx-auto border-4 border-slate-100 shadow-md">
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+                    src="/s_m_alif_ahmmed.png"
                     alt="S M Alif Ahmmed"
                     fill
                     className="object-cover"
